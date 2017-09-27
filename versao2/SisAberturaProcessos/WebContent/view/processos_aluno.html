@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>UFBA - Sistema de Abertura de Processos UFBA</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style>
+	.processo{
+  		width: auto; 
+    	left: auto; 
+    	margin: -30px 0 0 -150px; 
+    	padding:150px;
+	}
+
+	.formulario{
+		display: block;
+	}
+
+	.col-md-6{
+		display: none;
+	}
+
+</style>
+<script> 
+		window.onload=function(){
+			document.getElementById("mostrar_cadastro_processo").onclick=function(){
+			document.getElementsByClassName("formulario")[0].style.display="block";
+			document.getElementsByClassName("col-md-6")[0].style.display="none";
+		};
+
+			document.getElementById("mostrar_listagem_processos").onclick=function(){
+			document.getElementsByClassName("col-md-6")[0].style.display="block";
+			document.getElementsByClassName("formulario")[0].style.display="none";
+		};
+	};
+</script>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top ">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="index.html">Sistema de Abertura de
+					Processos - UFBA</a>
+				<ul class="nav">
+					<!--<li class="active"><a href="#">Início</a></li>
+      					<li><a href="#">Link</a></li>
+      					<li><a href="#">Link</a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="processo">
+			<ul class="nav nav-tabs" role="tablist">
+	        	<li  id="mostrar_cadastro_processo"><a href="#">Criar processo</a></li>
+	        	<li id="mostrar_listagem_processos"><a href="#">Lista de processos</a></li>
+	      	</ul>
+	      	<div class="formulario">
+	      		<form method="POST" action="">
+  					<fieldset>
+    					<legend>Requerimento</legend>
+						    <label>Nome do Requerente</label>
+						    	<input class="input-xxlarge" type="text" name="nome" placeholder="Nome" autofocus required>
+						    <label>Nº de Matrícula (para aluno da UFBA)</label>
+						    	<input class="input-medium" type="text" name="matricula" placeholder="Matricula">
+						    <label>Documento de Identificação (para público externo à UFBA)</label>
+						    	<input class="input-medium" type="text" name="identificacao" placeholder="Documento de identificação">
+						    <label>Tipo do documento (especificar)</label>
+						    	<input class="input-medium" type="text" name="tipo" placeholder="Tipo do documento">
+						    <label>Endereço</label>
+						    	<input class="input-xxlarge" type="text" name="endereco" placeholder="Endereço" required>
+						    <label>Bairro</label>
+						    	<input class="input-medium" type="text" name="bairro" placeholder="Bairro" required>
+						    <label>Telefone</label>
+						    	<input class="input-medium" type="text" name="telefone" placeholder="Telefone" required>
+						    <label>E-mail</label>
+						    	<input class="input-xlarge" type="text" name="email" placeholder="exemplo@exemplo.com" required>
+						    <label>CEP</label>
+						    	<input class="input-medium" type="text" name="cep" placeholder="CEP" required>
+						    <label>Curso</label>
+						    	<input class="input-xlarge" type="text" name="curso" placeholder="Curso">
+						    <label>Data</label>
+						    	<input class="input-medium" type="text" name="data" placeholder="Data" required>
+						    <legend>Objeto do Requerimento</legend>
+						    <label class="checkbox">
+  								<input type="checkbox" id="aprov_curso" value="aprov_curso"> Aproveitamento de Cursos, Atividades e Programas Institucionais
+  							</label>
+  							<label class="checkbox">
+								<input type="checkbox" id="aprov_estudos" value="aprov_estudos"> Aproveitamento de Estudos
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="curricular" value="curricular"> Avaliação Curricular
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="certidao" value="certidao"> CERTIDÃO de 
+								<input class="input-medium" type="text" name="tipo_certidao" placeholder="Tipo de certidao">
+							</label> 
+							<label class="checkbox">
+								<input type="checkbox" id="aluno_especial" value="aluno_especial"> Certidão de Estudos de Aluno Especial da Graduação
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="aluno_pos" value="aluno_pos"> Certificado de Aluno Especial da Pós-Graduação
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="certificado" value="certificado"> Certificado de Especialização
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="desistencia" value="desistencia"> Desistência definitiva de Curso
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="dilatacao" value="dilatacao"> Dilatação do Prazo Máximo para Conclusão do Curso
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="pre_requisito" value="pre_requisito"> Dispensa de Pré-requisito
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="dispensa_docente" value="dispensa_docente"> Dispensa de Tirocínio Docente
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="homologacao" value="homologacao"> Homologação e autorização para emissão de diploma
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="convenio" value="convenio"> Matrícula Aluno Convênio (Acordo Cultural)
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="mat_especial" value="mat_especial"> Matrícula Aluno Especial
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="intercambio" value="intercambio"> Matrícula Aluno Intercâmbio (Acordo Cultural)
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="superior" value="superior"> Matrícula como Portador de Diploma de Nível Superior de caráter especial
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="vagas_residuais" value="vagas_residuais"> Matrícula de Ingresso através de Processo Seletivo de Vagas Residuais
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="permanencia" value="permanencia"> Permanência no Curso
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="reconsideracao" value="reconsideracao"> Reconsideração de despacho/Recurso
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="retificacao" value="retificacao"> Retificação de Histórico
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="revalidacao" value="revalidacao"> Revalidação de Diploma ou Certificado
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="transferencia" value="transferencia"> Transferência “ex-officio”
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="trans_interna" value="trans_interna"> Transferência Interna de Caráter Especial
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="trans_pos" value="trans_pos"> Transferência Pós-Graduação
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="trancamento" value="trancamento"> Trancamento
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="total_inscricao" value="total_inscricao"> Total de inscrição em disciplinas
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="parcial_inscricao" value="parcial_inscricao"> Parcial de inscrição em disciplinas
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="determinado" value="determinado"> Por tempo determinado
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="homologacao" value="homologacao"> Outros ( especificar)
+								<input class="input-medium" type="text" name="tipo_homologacao" placeholder="Outros">
+							</label>
+						    <legend>Exclarecimentos</legend>
+						    	<textarea class="row-fluid" rows="5"></textarea>
+    		
+   							<div class="form-actions">
+  								<button type="submit" class="btn btn-primary">Enviar</button>
+  								<button type="button" class="btn">Cancelar</button>
+							</div>
+  					</fieldset>
+				</form>
+			
+	      	</div>
+	      	
+	      	<div class="col-md-6">
+		        <table class="table table-striped">
+		        	<thead>
+		              <tr>
+		                <th>Código</th>
+		                <th>Data de abertura</th>
+		                <th>Data de finalizção</th>
+		                <th>Situacão</th>
+		                <th>Resultado</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td>0001</td>
+		                <td>18/06/2014</td>
+		                <td>-</td>
+		                <td>Em andamento</td>
+		                <td>ainda nao finalizado</td>
+		              </tr>
+		              <tr>
+		                <td>0002</td>
+		                <td>18/06/2014</td>
+		                <td>-</td>
+		                <td>Em andamento</td>
+		                <td>ainda nao finalizado</td>
+		              </tr>
+		              <tr>
+		                <td>0003</td>
+		                <td>18/06/2014</td>
+		                <td>-</td>
+		                <td>Em andamento</td>
+		                <td>ainda nao finalizado</td>
+		              </tr>
+		              <tr>
+		                <td>0004</td>
+		                <td>18/06/2014</td>
+		                <td>-</td>
+		                <td>Em andamento</td>
+		                <td>ainda nao finalizado</td>
+		              </tr>
+		            </tbody>
+		          </table>
+		        </div>
+	    </div>
+    </div>
+	
+
+	<footer class="footer">
+		<div class="container">
+			<address>
+				<strong>UFBA - Universidade Federal da Bahia</strong><br>
+				Avenida Ademar de Barros, S/N - Campus de Ondina <br> CEP
+				40.170-110 Salvador-Bahia.<br> Telefone: 3283-6124 / Fax:
+				3283-6123
+			</address>
+		</div>
+	</footer>
+</body>
+</html>
